@@ -1,0 +1,13 @@
+use("MisAngeles_store")
+
+//No lo valida
+// db.users.insertOne({
+//     last_name: 'Garcia',
+//     email: 12
+// })
+
+db.users.insertOne({
+    last_name: 'Garcia',
+    email: 'garcia@gmail.com',
+    password: '123456'
+})
