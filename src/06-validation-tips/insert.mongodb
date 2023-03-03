@@ -1,0 +1,8 @@
+use("MisAngeles_store")
+
+db.users.insertOne({
+    email: 'garcia@gmail.com',
+    password: '123456aBa',
+    role: 'admin',
+//    social_accounts: ['twitter', 'facebook'] //No está permitido
+})
