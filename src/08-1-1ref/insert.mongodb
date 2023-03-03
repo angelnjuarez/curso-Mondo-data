@@ -1,0 +1,16 @@
+use("MisAngeles_store")
+
+db.stores.insertOne({
+    storeId: 'ST001',
+    name: 'Mis Angeles',
+    address: 'Calle 123',
+})
+
+db.stores_details.insertOne({
+    storeId: 'ST001',
+    description: 'Tienda de ropa',
+    manager: {
+        email: 'manager@gmail.com',
+        cellphone: '123456789',
+    }
+})

@@ -1,0 +1,18 @@
+use("MisAngeles_store")
+
+db.users.insertOne({
+    email: 'zule@gmail.com',
+    password: '123456aBa',
+    role: 'custumer',
+    social_accounts: ['twitter', 'facebook'],
+    address: {
+        street: 'Calle 3',
+        city: 'Ciudad 3',
+        zip: '1651'
+    },
+    shipping_address: {
+        street: 'Calle 4',
+        city: 'Ciudad 4',
+        zip: '1645'
+    }
+})

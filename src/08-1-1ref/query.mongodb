@@ -1,0 +1,18 @@
+use("MisAngeles_store")
+
+db.stores.findOne({storeId: 'ST001'})
+db.stores_details.findOne({storeId: 'ST001'})
+
+
+//Consultar ambas colecciones
+db.stores.aggregate([
+    {
+        $lookup:
+        {
+            from: "stores_details", //a qué enlazo
+            localField: "storeId", //key de la colección stores
+            foreignField: "storeId", //key de la colección stores_details
+            as: "detail"
+        }
+    },
+])

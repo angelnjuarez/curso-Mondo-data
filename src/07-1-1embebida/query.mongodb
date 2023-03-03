@@ -1,0 +1,5 @@
+use("MisAngeles_store")
+
+db.users.find({
+    "address.city": "Ciudad 1"
+}).count()
