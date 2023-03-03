@@ -1,0 +1,14 @@
+use("MisAngeles_store")
+
+db.orders.insertOne({
+    userId: ObjectId('64015a999e31a3d8c2c4b3bf'),
+    date: '2020-10-10',
+    //Relación: una orden tiene muchos items
+    items: [
+        {
+            name: 'Juguete',
+            price: 230,
+            qty: 3,
+        },
+    ]
+})
