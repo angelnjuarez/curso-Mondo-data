@@ -11,10 +11,12 @@ db.users.findOne({userId: ObjectId('64015a4874e8b930b9a80eaf')})
 //Consultar con lookup
 db.orders.aggregate([
     {
+        //Limita la información a un usuario en específico
         $match: {
             userId: ObjectId('64015a999e31a3d8c2c4b3bf')
         }
     },
+    //Combina la información de la colección users con la colección orders
     {
         $lookup: {
           from: 'users',
