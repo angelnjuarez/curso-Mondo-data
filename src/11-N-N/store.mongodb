@@ -1,0 +1,22 @@
+use("MisAngeles_store")
+
+db.stores.insertMany([
+    {
+        name: 'Mis Angeles 1',
+        productsIds:
+        [
+            ObjectId('63fe6e7221365043e8f8141b'),
+            ObjectId('6403ca1288e62ede24cb7e2b'),
+        ]
+    },
+    {
+        name: 'Mis Angeles 2',
+        productsIds:
+        [
+            ObjectId('63fe6e7221365043e8f8141b'),
+            ObjectId('6403ca1288e62ede24cb7e2b'),
+            ObjectId('6403ca1288e62ede24cb7e2c'),
+            ObjectId('6403ca1288e62ede24cb7e2d'),
+        ]
+    }
+])

@@ -1,0 +1,16 @@
+use("MisAngeles_store")
+
+db.products.find()
+db.stores.find().pretty()
+
+db.stores.aggregate([
+    {
+        $lookup:
+        {
+            from: 'products',
+            localField: 'productsIds', //Lo mapea como array directamente
+            foreignField: '_id',
+            as: 'products'
+        }
+    }
+])
