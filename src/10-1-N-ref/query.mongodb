@@ -1,0 +1,26 @@
+use("MisAngeles_store")
+
+db.users.find()
+db.orders.find({userId: ObjectId('64015a999e31a3d8c2c4b3bf')}).count()
+db.orders.find({userId: ObjectId('64015a4874e8b930b9a80eaf')}).count()
+
+//Consultar individualmente, no trae toda la información
+db.users.findOne({userId: ObjectId('64015a999e31a3d8c2c4b3bf')})
+db.users.findOne({userId: ObjectId('64015a4874e8b930b9a80eaf')})
+
+//Consultar con lookup
+db.orders.aggregate([
+    {
+        $match: {
+            userId: ObjectId('64015a999e31a3d8c2c4b3bf')
+        }
+    },
+    {
+        $lookup: {
+          from: 'users',
+          localField: 'userId',
+          foreignField: '_id',
+          as: 'user'
+        }
+    }
+])

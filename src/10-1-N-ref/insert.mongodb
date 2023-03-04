@@ -1,0 +1,18 @@
+use("MisAngeles_store")
+
+db.orders.insertOne({
+    userId: ObjectId('64015a999e31a3d8c2c4b3bf'),
+    date: '2022-12-10',
+    items: [
+        {
+            name: 'Zapatos',
+            price: 120,
+            qty: 1
+        },
+        {
+            name: 'Otra cosa',
+            price: 90,
+            qty: 1
+        }
+    ],
+})
