@@ -1,0 +1,18 @@
+use("MisAngeles_store")
+
+db.products.find()
+db.stores.find()
+
+//6403ca1288e62ede24cb7e2b
+//6403cc74ea5477509acfb71f
+
+db.products.aggregate([
+    {
+        $lookup: {
+          from: 'stores',
+          localField: 'storesIds',
+          foreignField: '_id',
+          as: 'stores' //Nombre de la colección
+        }
+    }
+])

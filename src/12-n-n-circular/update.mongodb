@@ -1,0 +1,12 @@
+use("MisAngeles_store")
+
+db.products.updateOne(
+    {_id: ObjectId('6403ca1288e62ede24cb7e2b')},
+    {
+        $set: {
+            storesIds: [
+                ObjectId('6403cc74ea5477509acfb71f'),
+            ]
+        }
+    }
+)
