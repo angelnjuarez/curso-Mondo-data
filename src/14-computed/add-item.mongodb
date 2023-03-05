@@ -1,0 +1,18 @@
+use("MisAngeles_store")
+
+db.orders.updateOne(
+    {_id: ObjectId('6403f4bfb918474ff29ce71c')},
+    {
+        $push: {
+            items: {
+            name: 'Producto 2',
+            price: 45,
+            qty: 3,
+            prodoctId: ObjectId('6403ca1288e62ede24cb7e2c')
+        }
+        },
+        $inc: {
+            total: 45 * 3
+        }
+    }
+)
