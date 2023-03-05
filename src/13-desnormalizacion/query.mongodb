@@ -1,0 +1,4 @@
+use("MisAngeles_store")
+
+db.products.find()
+db.orders.find({_id: ObjectId('6403f1faddee0b9249f84e0d')})
